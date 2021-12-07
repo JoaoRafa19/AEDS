@@ -4,7 +4,6 @@
 #include <string.h>
 #include <time.h>
 
-
 char *randstring(int length)
 {
   static int mySeed = 25011984;
@@ -21,7 +20,7 @@ char *randstring(int length)
 
   randomString = malloc(sizeof(char) * (length + 1));
 
-  if (randomString)
+  if (randomString != NULL)
   {
     short key = 0;
 
@@ -42,9 +41,9 @@ char *randstring(int length)
   }
 }
 
-int main()
+int main(int argc, char *argv[])
 {
-  
-  printf("%s", randstring(10));
+  int arg1 = atoi(argv[1]);
+  printf("%s", randstring(arg1));
   return 0;
 }
